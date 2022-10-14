@@ -5,6 +5,7 @@ import subway.domain.LineRepository;
 import subway.domain.Section;
 import subway.domain.Station;
 import subway.domain.StationRepository;
+import subway.view.Finder;
 
 import java.util.Scanner;
 
@@ -14,7 +15,9 @@ public class Application {
         final Scanner scanner = new Scanner(System.in);
         init();
 
-
+        Finder finder = new Finder(scanner);
+        finder.start();
+        scanner.close();
     }
 
     private static void init() {
