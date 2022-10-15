@@ -18,4 +18,8 @@ public class Line {
     public void addSection(Section section) {
         sections.add(section);
     }
+
+    public List<Section> findSections() {
+        return this.sections;
+    }
 }

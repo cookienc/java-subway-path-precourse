@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+import static java.util.stream.Collectors.toList;
+
 public class LineRepository {
     private static final List<Line> lines = new ArrayList<>();
 
@@ -22,5 +24,15 @@ public class LineRepository {
 
     public static void deleteAll() {
         lines.clear();
+    }
+
+    public static List<Line> findAllLines() {
+        return lines;
+    }
+
+    public static List<Section> findAllSections() {
+        return lines.stream()
+                .flatMap(l -> l.findSections().stream())
+                .collect(toList());
     }
 }

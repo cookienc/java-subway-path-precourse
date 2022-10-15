@@ -12,4 +12,20 @@ public class Section {
 		this.distance = distance;
 		this.time = time;
 	}
+
+	public String findUpStationName() {
+		return this.upStation.getName();
+	}
+
+	public String findDownStationName() {
+		return this.downStation.getName();
+	}
+
+	public int findDistance() {
+		return this.distance;
+	}
+
+	public int findTime() {
+		return this.time;
+	}
 }
